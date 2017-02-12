@@ -252,20 +252,43 @@ when <script type="math/tex" id="MathJax-Element-8640">x \to \infty</script>, <s
 <h5 id="proof">Proof</h5>
 
 <blockquote>
-  <p>First note that when <script type="math/tex" id="MathJax-Element-12963">k = 0</script>, and <script type="math/tex" id="MathJax-Element-12964">x \neq 0 </script> the expression <script type="math/tex" id="MathJax-Element-12965">x^k e^{-x}</script> becomes <script type="math/tex" id="MathJax-Element-12966">e^{-x}</script> which tends to zero as <script type="math/tex" id="MathJax-Element-12967">x \to \infty</script>. <br>
+  <p>First note that when <script type="math/tex" id="MathJax-Element-13103">k = 0</script>, and <script type="math/tex" id="MathJax-Element-13104">x \neq 0 </script> the expression <script type="math/tex" id="MathJax-Element-13105">x^k e^{-x}</script> becomes <script type="math/tex" id="MathJax-Element-13106">e^{-x}</script> which tends to zero as <script type="math/tex" id="MathJax-Element-13107">x \to \infty</script>. <br>
   The result therefore holds in this case. <br>
-  Further, when <script type="math/tex" id="MathJax-Element-12968">k < 0</script>, both <script type="math/tex" id="MathJax-Element-12969">x^k</script> and <script type="math/tex" id="MathJax-Element-12970">e^{-x}</script> tend to zero as <script type="math/tex" id="MathJax-Element-12971">x \to \infty</script> so the product of the two must also tend to 0. Therefore the result holds for this case as well.</p>
+  Further, when <script type="math/tex" id="MathJax-Element-13108">k < 0</script>, both <script type="math/tex" id="MathJax-Element-13109">x^k</script> and <script type="math/tex" id="MathJax-Element-13110">e^{-x}</script> tend to zero as <script type="math/tex" id="MathJax-Element-13111">x \to \infty</script> so the product of the two must also tend to 0. Therefore the result holds for this case as well.</p>
   
-  <p>Finally, suppose that <script type="math/tex" id="MathJax-Element-12972">k > 0</script>. Let <script type="math/tex" id="MathJax-Element-12973">n</script> be an integer such that <script type="math/tex" id="MathJax-Element-12974">n > k</script>. <br>
-  Using the series expansion for <script type="math/tex" id="MathJax-Element-12975">e^x</script> we have <br>
-  <script type="math/tex; mode=display" id="MathJax-Element-12976">\begin{align}x^ke^{-x} &= \dfrac{x^k}{e^x} \\
+  <p>Finally, suppose that <script type="math/tex" id="MathJax-Element-13112">k > 0</script>. Let <script type="math/tex" id="MathJax-Element-13113">n</script> be an integer such that <script type="math/tex" id="MathJax-Element-13114">n > k</script>. <br>
+  Using the series expansion for <script type="math/tex" id="MathJax-Element-13115">e^x</script> we have <br>
+  <script type="math/tex; mode=display" id="MathJax-Element-13116">\begin{align}x^ke^{-x} &= \dfrac{x^k}{e^x} \\
  &= \dfrac{x^k}{1 + x + \dfrac{x^2}{2!} + ... + \dfrac{x^n}{n!} + \dfrac{x^{n+1}}{(n+1)!} + \dfrac{x^{n+2}}{(n+2)!}+ ...} \\
  &= \dfrac{x^{k-n}}{x^{-n} + x^{1-n} + \dfrac{x^{2-n}}{2!} + ... + \dfrac{1}{n!} + \dfrac{x}{(n+1)!} + \dfrac{x^2}{(n+2)!}+ ...} \end{align}</script> <br>
-  As <script type="math/tex" id="MathJax-Element-12977">n>k</script>, <script type="math/tex" id="MathJax-Element-12978">k-n</script> is negative. Hence, when <script type="math/tex" id="MathJax-Element-12979">x \to \infty</script>, <script type="math/tex" id="MathJax-Element-12980">x^{k-n} \to 0</script>. <br>
-  In the denominator, all of the terms are positive, and all of those after <script type="math/tex" id="MathJax-Element-12981">\frac{1}{n!}</script> tend to infinity as <script type="math/tex" id="MathJax-Element-12982">x \to \infty</script>. <br>
-  Hence, when <script type="math/tex" id="MathJax-Element-12983">x \to \infty</script> the denominator of the expression tends to infinity. <br>
+  As <script type="math/tex" id="MathJax-Element-13117">n>k</script>, <script type="math/tex" id="MathJax-Element-13118">k-n</script> is negative. Hence, when <script type="math/tex" id="MathJax-Element-13119">x \to \infty</script>, <script type="math/tex" id="MathJax-Element-13120">x^{k-n} \to 0</script>. <br>
+  In the denominator, all of the terms are positive, and all of those after <script type="math/tex" id="MathJax-Element-13121">\frac{1}{n!}</script> tend to infinity as <script type="math/tex" id="MathJax-Element-13122">x \to \infty</script>. <br>
+  Hence, when <script type="math/tex" id="MathJax-Element-13123">x \to \infty</script> the denominator of the expression tends to infinity. <br>
   It follows that <br>
-  <script type="math/tex; mode=display" id="MathJax-Element-12984">x^ke^{-k} \to \frac 0 \infty = 0</script> <br>
-  No matter how large the value of <script type="math/tex" id="MathJax-Element-12985">k</script> may be, <script type="math/tex" id="MathJax-Element-12986">x^ke^{-k} \to 0</script> as <script type="math/tex" id="MathJax-Element-12987">x \to \infty</script> still holds. Therefore, for large values of <script type="math/tex" id="MathJax-Element-12988">x</script>, the influence of <script type="math/tex" id="MathJax-Element-12989">e^{-x}</script> is stronger than any power of <script type="math/tex" id="MathJax-Element-12990">x</script>.</p>
+  <script type="math/tex; mode=display" id="MathJax-Element-13124">x^ke^{-k} \to \frac 0 \infty = 0</script> <br>
+  No matter how large the value of <script type="math/tex" id="MathJax-Element-13125">k</script> may be, <script type="math/tex" id="MathJax-Element-13126">x^ke^{-k} \to 0</script> as <script type="math/tex" id="MathJax-Element-13127">x \to \infty</script> still holds. Therefore, for large values of <script type="math/tex" id="MathJax-Element-13128">x</script>, the influence of <script type="math/tex" id="MathJax-Element-13129">e^{-x}</script> is stronger than any power of <script type="math/tex" id="MathJax-Element-13130">x</script>.</p>
+</blockquote>
+
+
+
+<h4 id="the-limit-of-xk-lnx-as-x-to-0">The limit of <script type="math/tex" id="MathJax-Element-13814">x^k \ln(x)</script> as <script type="math/tex" id="MathJax-Element-13815">x \to 0</script></h4>
+
+<p>Consider the function <script type="math/tex" id="MathJax-Element-13816">x^k \ln(x)</script> where <script type="math/tex" id="MathJax-Element-13817">k >0</script>. <script type="math/tex" id="MathJax-Element-13818">x</script> must be restricted to <script type="math/tex" id="MathJax-Element-13819">\mathbb{R^+}</script> as <script type="math/tex" id="MathJax-Element-13820">\ln(x)</script> is only real for this set.</p>
+
+<p>When <script type="math/tex" id="MathJax-Element-13821">x \to 0</script>, <script type="math/tex" id="MathJax-Element-13822">x^k \to 0</script> and <script type="math/tex" id="MathJax-Element-13823">\ln(x) \to -\infty</script>. It is not obvious what happens to the product as <script type="math/tex" id="MathJax-Element-13824">x \to 0</script>.</p>
+
+<p>As <script type="math/tex" id="MathJax-Element-13825">x \to 0</script>, <script type="math/tex" id="MathJax-Element-13826">x^k\ln(x) \to 0</script> for all <script type="math/tex" id="MathJax-Element-13827">k > 0</script></p>
+
+
+
+<h5 id="proof-1">Proof</h5>
+
+<blockquote>
+  <p>Let <script type="math/tex" id="MathJax-Element-14526"> x = e^{-\frac y k}</script>. Then when <script type="math/tex" id="MathJax-Element-14527">y \to \infty</script>, <script type="math/tex" id="MathJax-Element-14528">x \to 0</script>. Also <script type="math/tex" id="MathJax-Element-14529">x^k = e^{-y}</script> and <script type="math/tex" id="MathJax-Element-14530">\ln(x)  = -\frac y k</script>. Hence, <br>
+  <script type="math/tex; mode=display" id="MathJax-Element-14531">\begin{align}
+ \lim_{x \to 0}\left(x^k\ln(x)\right) &= \lim_{y \to \infty}\left(-\frac y k e^{-y}\right) \\
+ &= -\frac 1 k \lim_{y \to \infty} \left(y e^{-y} \right) \end{align}</script> <br>
+  Using the established limit for <script type="math/tex" id="MathJax-Element-14532">x^ke^{-k}</script> with <script type="math/tex" id="MathJax-Element-14533">k = 1</script>, we have <script type="math/tex" id="MathJax-Element-14534">\lim \limits_{y \to \infty}\left(ye^{-y} \right)  = 0</script>  <br>
+  <script type="math/tex; mode=display" id="MathJax-Element-14535"></script> </p>
 </blockquote></div></body>
 </html>
