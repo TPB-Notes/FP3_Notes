@@ -121,9 +121,7 @@ because <script type="math/tex" id="MathJax-Element-14142">1+x \to 1</script> an
 
 <h3 id="example">Example</h3>
 
-<p>Find the Maclaurin series of <script type="math/tex" id="MathJax-Element-14176">sin(x)</script></p>
-
-
+<p>Find the Maclaurin series of <script type="math/tex" id="MathJax-Element-18864">\sin(x)</script></p>
 
 <p><script type="math/tex; mode=display" id="MathJax-Element-14177">\begin{alignat*}{3} \\
 &f(x) &&= \sin(x) &&&\Rightarrow f(0) &&&&= 0 \\
@@ -583,7 +581,35 @@ Provided that the three points are reasonably close together, the gradient of th
 
 
 
-<p><script type="math/tex; mode=display" id="MathJax-Element-14856">y_{r+1} = y_{r-1} + 2hf(x_r, y_r)</script></p>
+<p><script type="math/tex; mode=display" id="MathJax-Element-14865">y_{r+1} = y_{r-1} + 2hf(x_r, y_r)</script></p>
 
-<p>Since only the value of <script type="math/tex" id="MathJax-Element-14857">y_{r-1}</script>  is known, it is necessary t calculate <script type="math/tex" id="MathJax-Element-14858">y_r</script> by another means</p></div></body>
+<p>Since only the value of <script type="math/tex" id="MathJax-Element-14866">y_{r-1}</script>  is known, it is necessary t calculate <script type="math/tex" id="MathJax-Element-14867">y_r</script> by another means.</p>
+
+
+
+<h3 id="example-5">Example</h3>
+
+<blockquote>
+  <p>The function <script type="math/tex" id="MathJax-Element-19107">y(x)</script> satisfies the differential equation <script type="math/tex" id="MathJax-Element-19108">\frac{dy}{dx} = 1 + \sqrt{xy}</script> and the condition <script type="math/tex" id="MathJax-Element-19109">y(0) = 1</script>. <br>
+  Use the mid-point formula with a step length of <script type="math/tex" id="MathJax-Element-19110">0.25</script> to obtain an approximate value for <script type="math/tex" id="MathJax-Element-19111">y(1)</script> to three decimal places. </p>
+  
+  <p><script type="math/tex" id="MathJax-Element-19112">x_0 = 0,\ y_0 =1,\ h=0.25,\ f(x, y) = 1 + \sqrt{xy}</script> </p>
+  
+  <p>Euler’s formula gives <br>
+   <script type="math/tex; mode=display" id="MathJax-Element-19113">\begin{align}y(0.25) = y_1 &= y_0 +h(1 + \sqrt{x_0 y_0}) \\ 
+   &= 1 + 0.25 \times 1 \\ 
+   &= 1.25\end{align}</script> <br>
+  The mid-point formula gives <br>
+  <script type="math/tex; mode=display" id="MathJax-Element-19114"> \begin{alignat*}{3}
+    &y(0.5) &&=y_2 &&&=y_1 + 2h(1 + \sqrt{x_1 y_1}) &&&&\\
+		    &\ &&\  &&&= 1+ 0.5(1 + \sqrt{0.25 \times 1.25}) &&&&\\
+		    &\ &&\ &&&\approx 1.77951 &&&&\\
+    &y(0.75) &&=y_3 &&&= 2h(1+ \sqrt{x_2 y_2}) &&&&\\
+		    &\ &&\  &&&= 1.25 + 0.5(1 + \sqrt{0.5 \times 1.77951}) &&&& \\
+		    &\ &&\ &&&\approx 2.22163 &&&&\\
+    &y(1) &&=y_4 &&&= y_2 + 2h(1 + \sqrt{x_3 y_3}) &&&& \\
+            &\ &&\  &&&= 1.77951 + 0.5(1 + \sqrt{0.75 \times 2.22163})&&&& \\
+		    &\ &&\ &&&\approx 2.92492 &&&&\\
+\end{alignat*}</script></p>
+</blockquote></div></body>
 </html>
