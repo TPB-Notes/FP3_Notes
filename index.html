@@ -590,17 +590,17 @@ Provided that the three points are reasonably close together, the gradient of th
 <h3 id="example-5">Example</h3>
 
 <blockquote>
-  <p>The function <script type="math/tex" id="MathJax-Element-19107">y(x)</script> satisfies the differential equation <script type="math/tex" id="MathJax-Element-19108">\frac{dy}{dx} = 1 + \sqrt{xy}</script> and the condition <script type="math/tex" id="MathJax-Element-19109">y(0) = 1</script>. <br>
-  Use the mid-point formula with a step length of <script type="math/tex" id="MathJax-Element-19110">0.25</script> to obtain an approximate value for <script type="math/tex" id="MathJax-Element-19111">y(1)</script> to three decimal places. </p>
+  <p>The function <script type="math/tex" id="MathJax-Element-19131">y(x)</script> satisfies the differential equation <script type="math/tex" id="MathJax-Element-19132">\frac{dy}{dx} = 1 + \sqrt{xy}</script> and the condition <script type="math/tex" id="MathJax-Element-19133">y(0) = 1</script>. <br>
+  Use the mid-point formula with a step length of <script type="math/tex" id="MathJax-Element-19134">0.25</script> to obtain an approximate value for <script type="math/tex" id="MathJax-Element-19135">y(1)</script> to three decimal places. </p>
   
-  <p><script type="math/tex" id="MathJax-Element-19112">x_0 = 0,\ y_0 =1,\ h=0.25,\ f(x, y) = 1 + \sqrt{xy}</script> </p>
+  <p><script type="math/tex" id="MathJax-Element-19136">x_0 = 0,\ y_0 =1,\ h=0.25,\ f(x, y) = 1 + \sqrt{xy}</script> </p>
   
   <p>Euler’s formula gives <br>
-   <script type="math/tex; mode=display" id="MathJax-Element-19113">\begin{align}y(0.25) = y_1 &= y_0 +h(1 + \sqrt{x_0 y_0}) \\ 
+   <script type="math/tex; mode=display" id="MathJax-Element-19137">\begin{align}y(0.25) = y_1 &= y_0 +h(1 + \sqrt{x_0 y_0}) \\ 
    &= 1 + 0.25 \times 1 \\ 
    &= 1.25\end{align}</script> <br>
   The mid-point formula gives <br>
-  <script type="math/tex; mode=display" id="MathJax-Element-19114"> \begin{alignat*}{3}
+  <script type="math/tex; mode=display" id="MathJax-Element-19138"> \begin{alignat*}{3}
     &y(0.5) &&=y_2 &&&=y_1 + 2h(1 + \sqrt{x_1 y_1}) &&&&\\
 		    &\ &&\  &&&= 1+ 0.5(1 + \sqrt{0.25 \times 1.25}) &&&&\\
 		    &\ &&\ &&&\approx 1.77951 &&&&\\
@@ -610,6 +610,40 @@ Provided that the three points are reasonably close together, the gradient of th
     &y(1) &&=y_4 &&&= y_2 + 2h(1 + \sqrt{x_3 y_3}) &&&& \\
             &\ &&\  &&&= 1.77951 + 0.5(1 + \sqrt{0.75 \times 2.22163})&&&& \\
 		    &\ &&\ &&&\approx 2.92492 &&&&\\
-\end{alignat*}</script></p>
+\end{alignat*}</script> </p>
+</blockquote>
+
+
+
+<h2 id="the-improved-euler-formula">The Improved Euler formula</h2>
+
+<p>Another formula can be obtained by assuming that the gradient of <script type="math/tex" id="MathJax-Element-19190">P_r P_{r+1}</script> is equal to the average of the values of <script type="math/tex" id="MathJax-Element-19191">\frac{dy}{dx}</script> at <script type="math/tex" id="MathJax-Element-19192">P_r</script> and <script type="math/tex" id="MathJax-Element-19193">P_{r+1}</script>.</p>
+
+<p>With this assumption</p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-19223">\frac{y_{r+1} - y_r}{h} = \frac 1 2 [f(x_r, y_r) + f(x_{r+1}, y_{r+1})]</script></p>
+
+<p>Hence </p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-19266">y_{r+1} = y_r + \frac h 2 [f(x_r, y_r) + f(x_{r+1}, y_{r+1}^*)]</script></p>
+
+<p>Where <script type="math/tex" id="MathJax-Element-19267">y_{r+1}^*</script> is an approximation for <script type="math/tex" id="MathJax-Element-19268">y_{r+1}</script>, often obtained by Euler’s formula. </p>
+
+<h3 id="example-6">Example</h3>
+
+<blockquote>
+  <p>The function <script type="math/tex" id="MathJax-Element-20023">y(x)</script> satisfies the differential equation <script type="math/tex" id="MathJax-Element-20024">\frac{dy}{dx} = \ln(x+y), \quad x \geq 1</script>. <br>
+  The boundary condition is <script type="math/tex" id="MathJax-Element-20025">y(1) = 1</script>. Use the improved Euler formula with a step length of <script type="math/tex" id="MathJax-Element-20026">0.25</script> to estimate the value of <script type="math/tex" id="MathJax-Element-20027">y(1.5)</script></p>
+  
+  <p><script type="math/tex" id="MathJax-Element-20028">x_0 = 1,\ y_0 = 1, \ h = 0.25, \text{and}\ f(x,y) = \ln(x+y)</script>  <br>
+   the first estimate of <script type="math/tex" id="MathJax-Element-20029">y_1</script> is obtained by Euler’s formula <br>
+   <script type="math/tex; mode=display" id="MathJax-Element-20030">\begin{align}y_1^* &= y_0 + h\ln(x_0 + y_0) \\
+    &= 1 + 0.25\ln(2) \\
+    &\approx 1.17329\end{align}</script> <br>
+  For <script type="math/tex" id="MathJax-Element-20031">y_{1}</script> we have</p>
 </blockquote></div></body>
 </html>
