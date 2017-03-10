@@ -636,14 +636,96 @@ Provided that the three points are reasonably close together, the gradient of th
 <h3 id="example-6">Example</h3>
 
 <blockquote>
-  <p>The function <script type="math/tex" id="MathJax-Element-20023">y(x)</script> satisfies the differential equation <script type="math/tex" id="MathJax-Element-20024">\frac{dy}{dx} = \ln(x+y), \quad x \geq 1</script>. <br>
-  The boundary condition is <script type="math/tex" id="MathJax-Element-20025">y(1) = 1</script>. Use the improved Euler formula with a step length of <script type="math/tex" id="MathJax-Element-20026">0.25</script> to estimate the value of <script type="math/tex" id="MathJax-Element-20027">y(1.5)</script></p>
+  <p>The function <script type="math/tex" id="MathJax-Element-21939">y(x)</script> satisfies the differential equation <script type="math/tex" id="MathJax-Element-21940">\frac{dy}{dx} = \ln(x+y), \quad x \geq 1</script>. <br>
+  The boundary condition is <script type="math/tex" id="MathJax-Element-21941">y(1) = 1</script>. Use the improved Euler formula with a step length of <script type="math/tex" id="MathJax-Element-21942">0.25</script> to estimate the value of <script type="math/tex" id="MathJax-Element-21943">y(1.5)</script></p>
   
-  <p><script type="math/tex" id="MathJax-Element-20028">x_0 = 1,\ y_0 = 1, \ h = 0.25, \text{and}\ f(x,y) = \ln(x+y)</script>  <br>
-   the first estimate of <script type="math/tex" id="MathJax-Element-20029">y_1</script> is obtained by Euler’s formula <br>
-   <script type="math/tex; mode=display" id="MathJax-Element-20030">\begin{align}y_1^* &= y_0 + h\ln(x_0 + y_0) \\
+  <p><script type="math/tex" id="MathJax-Element-21944">x_0 = 1,\ y_0 = 1, \ h = 0.25, \text{and}\ f(x,y) = \ln(x+y)</script>  <br>
+   the first estimate of <script type="math/tex" id="MathJax-Element-21945">y_1</script> is obtained by Euler’s formula <br>
+   <script type="math/tex; mode=display" id="MathJax-Element-21946">\begin{align}y_1^* &= y_0 + h\ln(x_0 + y_0) \\
     &= 1 + 0.25\ln(2) \\
     &\approx 1.17329\end{align}</script> <br>
-  For <script type="math/tex" id="MathJax-Element-20031">y_{1}</script> we have</p>
+  For <script type="math/tex" id="MathJax-Element-21947">y_{1}</script> we then have <br>
+  <script type="math/tex; mode=display" id="MathJax-Element-21948">\begin{align}y_1 &= y_0 + \frac h 2 [\ln(x_0 + y_0) + \ln(x_1 + y_1)] \\
+  &= 1 + 0.125[\ln(2) + \ln(1.25 + 1.19728)] \\
+  &\approx 1.42102\end{align}</script> <br>
+  We can now use Euler’s formula with the improved value of <script type="math/tex" id="MathJax-Element-21949">y_1</script> to give <br>
+  <script type="math/tex; mode=display" id="MathJax-Element-21950">\begin{align}y_2^* &= y_1 + h\ln(x_1 +y_1) \\
+    &= 1.19728 + 0.25\ln(1.25 + 1.19728) \\
+    &\approx 1.42102\end{align}</script> <br>
+  And finally  <br>
+  <script type="math/tex; mode=display" id="MathJax-Element-21951">\begin{align}y_2 &= y_1 + \frac h 2 [\ln(x_1 + y_1) + \ln(x_2 + y_2^*)] \\
+   &= 1.19728 + 0.125[\ln(1.25 + 1.19728) + \ln(1.5  1.42102)] \\
+   &\approx 1.443\end{align}</script></p>
+</blockquote>
+
+
+
+<h2 id="alternative-calculation-for-the-improved-euler-method">Alternative calculation for the improved Euler method</h2>
+
+<p>By substituting the the expression for <script type="math/tex" id="MathJax-Element-21974">y^*_{r+1}</script> into the expression for <script type="math/tex" id="MathJax-Element-21975">y_{r+1}</script> we achieve</p>
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-22002">y_{r+1} = y_r + \frac h 2 [f(x_r, y_r) + f(x_{r+1}, y_r + hf(x_r, y_r))]</script></p>
+
+<p>Noting that <script type="math/tex" id="MathJax-Element-22003">x_{r+1} = x_r +h </script> this can be expressed as</p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-22070">y_{r+1} = y_r + \frac 1 2(k_1 + k_2)</script></p>
+
+<p>where <script type="math/tex" id="MathJax-Element-22071">k_1 = hf(x_r, y_r)</script> <br>
+and <script type="math/tex" id="MathJax-Element-22072">k_2 = hf(x_r + h, y_r + k_1)</script></p>
+
+<h3 id="example-7">Example</h3>
+
+<blockquote>
+  <p>The function <script type="math/tex" id="MathJax-Element-27145">y(x)</script> satisfies the differential equation <script type="math/tex" id="MathJax-Element-27146">\frac{dy}{dx} = f(x, y)</script> where <script type="math/tex" id="MathJax-Element-27147">f(x, y) = 2x^3 + 3 -2y, \quad x \geq 0</script>.  <br>
+  The boundary condition is <script type="math/tex" id="MathJax-Element-27148">y(0) = 5</script> </p>
+  
+  <p>a) Use the improved Euler method, with <script type="math/tex" id="MathJax-Element-27149">h = 0.25</script>, to calculate approximations to the values of <script type="math/tex" id="MathJax-Element-27150">y(0.25)</script> and <script type="math/tex" id="MathJax-Element-27151">y(0.5)</script>. </p>
+  
+  <p>Setting out the solution in a tabular form</p>
+  
+  <table>
+<thead>
+<tr>
+  <th><script type="math/tex" id="MathJax-Element-27152">r</script></th>
+  <th><script type="math/tex" id="MathJax-Element-27153">x_r</script></th>
+  <th><script type="math/tex" id="MathJax-Element-27154">y_r</script></th>
+  <th><script type="math/tex" id="MathJax-Element-27155">k_1</script></th>
+  <th><script type="math/tex" id="MathJax-Element-27156">x_r + h</script></th>
+  <th><script type="math/tex" id="MathJax-Element-27157">y_r + k_1</script></th>
+  <th><script type="math/tex" id="MathJax-Element-27158">k_2</script></th>
+  <th><script type="math/tex" id="MathJax-Element-27159">y_{r+1}</script></th>
+</tr>
+</thead>
+<tbody><tr>
+  <td><script type="math/tex" id="MathJax-Element-27160">0</script></td>
+  <td><script type="math/tex" id="MathJax-Element-27161">0</script></td>
+  <td><script type="math/tex" id="MathJax-Element-27162">5</script></td>
+  <td><script type="math/tex" id="MathJax-Element-27163">-1.75</script></td>
+  <td><script type="math/tex" id="MathJax-Element-27164">0.25</script></td>
+  <td><script type="math/tex" id="MathJax-Element-27165">3.25</script></td>
+  <td><script type="math/tex" id="MathJax-Element-27166">-0.84375</script></td>
+  <td><script type="math/tex" id="MathJax-Element-27167">3.70125</script></td>
+</tr>
+<tr>
+  <td><script type="math/tex" id="MathJax-Element-27168">1</script></td>
+  <td><script type="math/tex" id="MathJax-Element-27169">0.25</script></td>
+  <td><script type="math/tex" id="MathJax-Element-27170">3.703125</script></td>
+  <td><script type="math/tex" id="MathJax-Element-27171">-1.0703125</script></td>
+  <td><script type="math/tex" id="MathJax-Element-27172">0.5</script></td>
+  <td><script type="math/tex" id="MathJax-Element-27173">2.638125</script></td>
+  <td><script type="math/tex" id="MathJax-Element-27174">-0.44140625</script></td>
+  <td><script type="math/tex" id="MathJax-Element-27175">2.947266</script></td>
+</tr>
+</tbody></table>
+
+  
+  <p>b) The exact solution to the differential equation is <script type="math/tex" id="MathJax-Element-27176">y(x) = 3e^{-2x} + x^2 -x + 2</script>. <br>
+  Calculate, to two significant figures, the percentage error in the value of <script type="math/tex" id="MathJax-Element-27177">y(0.5)</script> obtained in part (a).</p>
+  
+  <p><script type="math/tex" id="MathJax-Element-27178">y(0.5) = 3e^{-1} + 0.5^2 - 0.5 + 2 \approx 2.853638</script>  <br>
+   Hence the error is  <br>
+   <script type="math/tex" id="MathJax-Element-27179">\dfrac{2.942766 - 2.853638}{2.853638} \times 100\% \approx 3.3 \%</script></p>
 </blockquote></div></body>
 </html>
