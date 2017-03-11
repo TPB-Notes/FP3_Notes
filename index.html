@@ -788,5 +788,28 @@ They can also be derived analytically.</p>
 
 
 
-<p><script type="math/tex; mode=display" id="MathJax-Element-845"></script></p></div></body>
+<p><script type="math/tex; mode=display" id="MathJax-Element-874">y'(x_r +h) = y'(x_r) + hy''(x_r) + \frac{h^2}{2!}y'''(x_r)+\ ...</script></p>
+
+<p>which may be expressed as </p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-910">f(x_{r+1}, y_{r+1}) = f(x_r, y_r) + hy''(x_r) + \frac{h^2}{2!}y'''(x_r)+\ ...</script></p>
+
+<p>Multiplying each side by <script type="math/tex" id="MathJax-Element-911">\frac h 2</script> and subtracting the result from the Taylor series for <script type="math/tex" id="MathJax-Element-912">y_{r+1}</script> gives</p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-951">y_{r+1} - \frac h 2 f(x_{r+1}, y_{r+1}) = y_r + \frac h 2 f(x_r, y_r) + \text{terms  in } h^3 \text{ and higher powers}</script></p>
+
+<p>Neglecting the terms in <script type="math/tex" id="MathJax-Element-952">h^3</script> and higher powers we have</p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-1159">y_{r+1} = y_r + \frac h 2 [f(x_r, y_r), + f(x_{r+1}, y_{r+1})]</script></p>
+
+<p>The error incurred by neglecting terms is called the truncation error. <br>
+The derivations show that the truncation error in Euler’s formula is greater than that in the mid-point formula and the improved Euler formula because the extra term <script type="math/tex" id="MathJax-Element-1160">h^2</script> is neglected.</p>
+
+<p>In addition to the truncation area, for all values of <script type="math/tex" id="MathJax-Element-1161">r \geq 1</script>, another error will be incurred in the calculation of <script type="math/tex" id="MathJax-Element-1162">y_{r+1}</script> because an approximate value of <script type="math/tex" id="MathJax-Element-1163">y_r</script> has to be used in the evaluation of <script type="math/tex" id="MathJax-Element-1164">f(x_r, y_r)</script>. As the calculation of <script type="math/tex" id="MathJax-Element-1165">y</script> values progresses, errors of this type sometimes decay, however they can also become increasingly larger, in which case the method is said to be unstable.</p></div></body>
 </html>
