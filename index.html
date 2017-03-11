@@ -813,5 +813,52 @@ The derivations show that the truncation error in Euler’s formula is greater t
 
 <p>In addition to the truncation area, for all values of <script type="math/tex" id="MathJax-Element-1266">r \geq 1</script>, another error will be incurred in the calculation of <script type="math/tex" id="MathJax-Element-1267">y_{r+1}</script> because an approximate value of <script type="math/tex" id="MathJax-Element-1268">y_r</script> has to be used in the evaluation of <script type="math/tex" id="MathJax-Element-1269">f(x_r, y_r)</script>. As the calculation of <script type="math/tex" id="MathJax-Element-1270">y</script> values progresses, errors of this type sometimes decay, however they can also become increasingly larger, in which case the method is said to be unstable.</p>
 
-<p>To estimate the order of accuracy of a solution, the usual procedure is to reduce the step length to half its previous value and repeat the calculations. It is usually safe to assume that the values are accurate to the number of decimal places which are the same in the two values.</p></div></body>
+<p>To estimate the order of accuracy of a solution, the usual procedure is to reduce the step length to half its previous value and repeat the calculations. It is usually safe to assume that the values are accurate to the number of decimal places which are the same in the two values.</p>
+
+<h1 id="second-order-differential-equations">Second order differential equations</h1>
+
+<h2 id="complex-numbers">Complex numbers</h2>
+
+<p>The set of all complex numbers is denoted by <script type="math/tex" id="MathJax-Element-1358">\mathbb{C}</script>. When the coefficient of the imaginary component is 0, <script type="math/tex" id="MathJax-Element-1359">a +  \mathrm{i}b</script> reduces to the real value <script type="math/tex" id="MathJax-Element-1360">a</script>, so <script type="math/tex" id="MathJax-Element-1361">\mathbb{C}</script> includes the set <script type="math/tex" id="MathJax-Element-1362">\mathbb{R}</script> of real numbers.</p>
+
+<h3 id="eulers-identity">Euler’s identity</h3>
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-1388">e^{\mathrm{i}x} = \cos(x) + \mathrm{i}\sin(x), \quad x \in \mathbb{R}</script></p>
+
+<p>The identity can be proved by series expansions.</p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-1573">e^{\mathrm{i}x} = 1 + \mathrm{i}x + \frac{(\mathrm{i}x)^2}{2!} + \frac{(\mathrm{i}x)^3}{3!} + \frac{(\mathrm{i}x)^4}{4!} + \frac{(\mathrm{i}x)^5}{5!} +\ ...</script></p>
+
+<p><script type="math/tex" id="MathJax-Element-1574">\mathrm{i}^2 = -1,\ \mathrm{i}^3 = -\mathrm{i},\ \mathrm{i}^4 = 1,\ \mathrm{i}^5 = \mathrm{i}</script> and the same sequence of results <script type="math/tex" id="MathJax-Element-1575">(-1,\ -\mathrm{i},\ 1,\ \mathrm{i})</script> is generated repeatedly for all higher integer powers. <br>
+Substituting these expressions above and collecting together real and imaginary values gives</p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-1612">e^{\mathrm{i}x} = \left(1 - \frac{x^2}{2!} + \frac{x^4}{4!} -\ ... \right) + \mathrm{i}\left(x - \frac{x^3}{3!} + \frac{x^5}{5!} -\ ... \right) </script></p>
+
+<p>Hence</p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-1623">e^{\mathrm{i}x} \equiv \cos(x) + \mathrm{i}\sin(x), \quad x \in \mathbb{R}</script></p>
+
+<h4 id="example-8">Example</h4>
+
+<blockquote>
+  <p>The function <script type="math/tex" id="MathJax-Element-2638">y(x)</script> is given by</p>
+  
+  <p><script type="math/tex; mode=display" id="MathJax-Element-2639">y(x) = Ae^{(2 + 3\mathrm{i})x} + Be^{(2-3\mathrm{i})x}</script> <br>
+   where <script type="math/tex" id="MathJax-Element-2640">A</script> and <script type="math/tex" id="MathJax-Element-2641">B</script> are constants. Show that this can be expressed as  <br>
+   <script type="math/tex; mode=display" id="MathJax-Element-2642">y(x) = e^{2x}(C\cos(3x) + D\sin(3x))</script> <br>
+   where <script type="math/tex" id="MathJax-Element-2643">C</script> and <script type="math/tex" id="MathJax-Element-2644">D</script> are constants.</p>
+  
+  <p><script type="math/tex; mode=display" id="MathJax-Element-2645">\begin{align}y(x) &= A\left(Ae^{2x} \times e^{3\mathrm{i}x} \right) + B\left(Ae^{2x} \times e^{-3\mathrm{i}x} \right) \\
+   &= Ae^{2x}\left(\cos(3x) + \mathrm{i}\sin(3x) \right) + Be^{2x}\left(\cos(3x) - \mathrm{i}\sin(3x) \right) \\
+   &= e^{2x} \left[(A+B)\cos(3x) + (A-B)\mathrm{i}\sin(3x) \right]\end{align}</script> <br>
+  Writing <script type="math/tex" id="MathJax-Element-2646">A + B = C</script> and <script type="math/tex" id="MathJax-Element-2647">(A-B)\mathrm{i} = D</script>, this becomes </p>
+  
+  <p><script type="math/tex; mode=display" id="MathJax-Element-2648">y(x) = e^{2x}(C\cos(3x) + D\sin(3x))</script></p>
+</blockquote></div></body>
 </html>
